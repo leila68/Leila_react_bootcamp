@@ -1,6 +1,9 @@
 import React, { createContext, useContext, useState } from "react";
 import PropTypes from "prop-types";
 
+
+const CountContext = createContext();
+
 function UseContextPage() {
   const [count, setCount] = useState(0);
 
@@ -35,7 +38,8 @@ ParentComponent.propTypes = {
 }
 
 function ChildComponent(props) {
-  const count = props.count;
+  // const count = props.count;
+  const count = useContext(CountContext);
   return (
       <div>
         <h3>Child Component</h3>
