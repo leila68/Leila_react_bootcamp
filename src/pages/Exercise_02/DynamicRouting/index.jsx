@@ -2,8 +2,10 @@ import { useParams } from "react-router-dom";
 
 
 const DynamicRoutingPage = () => {
-  const params = useParams()
-  const id = 'blank';
+  // const params = useParams()
+  // const id = 'blank';
+   // Extract id and otherParam from the URL
+  const { id, otherParam } = useParams();
   return (
       <div className='exercise-container'>
         <h1>Dynamic route</h1>
@@ -29,7 +31,7 @@ const DynamicRoutingPage = () => {
         </p>
 
         <p>
-          The (other-param) from the URL is: ??
+          The (other-param) from the URL is: {otherParam}
         </p>
       </div>
 

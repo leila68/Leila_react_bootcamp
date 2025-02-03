@@ -18,7 +18,7 @@ const router = createBrowserRouter(
           <Route path="exercise_01" element={<Exercise_01 />} />
           <Route path="exercise_02" element={<Exercise_02 />} />
           <Route path="dynamic">
-            <Route path=":id" element={<DynamicRoutingPage />} />
+            <Route path="/dynamic/:id/:otherParam" element={<DynamicRoutingPage />} />
           </Route>
           <Route path="functional-example" element={<FunctionalExamplePage />} />
           <Route path="class-example" element={<ClassExamplePage />} />
