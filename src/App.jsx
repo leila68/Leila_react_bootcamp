@@ -10,6 +10,7 @@ import Exercise_02 from "./pages/Exercise_02/index.jsx";
 import ClassExamplePage from "./pages/Exercise_01/ClassExample/index.jsx";
 import ApiCallPage from "./pages/Exercise_02/ApiCall/index.jsx";
 import UseContextPage from "./pages/Exercise_02/UseContext/index.jsx";
+import Exe3App from "./pages/Exercise_03/Exe3App.jsx";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
           <Route path="class-example" element={<ClassExamplePage />} />
           <Route path="api-call" element={<ApiCallPage />} />
           <Route path="use-context" element={<UseContextPage />} />
+          <Route path="exercise-3" element={<Exe3App />} />
         </Route>
     )
 )
