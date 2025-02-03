@@ -3,17 +3,29 @@ import { useState, useEffect } from "react";
 function TitleUpdater() {
   const [count, setCount] = useState(0);
 
-  // Update the document title whenever the count changes
   useEffect(() => {
     document.title = `Count: ${count}`;
-  }, [count]); // Dependency array ensures it runs only when count changes
+
+    return () => {
+      console.log("Component is being unmounted");
+    };
+  }, [count]); 
 
   return (
-      <div>
-        <h1>Current Count: {count}</h1>
-        <button onClick={() => {}}>Increase Count</button>
-      </div>
+    <div>
+      <h1>Current Count: {count}</h1>
+
+      {/* Increase count */}
+      <button onClick={() => setCount(count + 1)}>Increase Count</button>
+
+      {/* Decrease count */}
+      <button onClick={() => setCount(count - 1)}>Decrease Count</button>
+
+      {/* Display message when count reaches 10 */}
+      {count === 10 && <p>Congratulations! You've reached 10!</p>}
+    </div>
   );
 }
 
 export default TitleUpdater;
+
