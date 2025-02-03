@@ -2,9 +2,11 @@ import { useRef, useState } from "react";
 
 function ApiCallPage() {
   const [result, setResult] = useState(null);
+  const inputRef = useRef(null); // create a ref for input element
 
   const handleSearch = async () => {
-    const query = null; // get value from input element
+    // const query = null; // get value from input element
+    const query = inputRef.current?.value.trim();
     if (!query) return alert("Please enter a search query.");
 
     try {
