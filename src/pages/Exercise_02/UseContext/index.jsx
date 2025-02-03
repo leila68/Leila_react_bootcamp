@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useState } from "react";
-import PropTypes from "prop-types";
 
-
+// Create the Context
 const CountContext = createContext();
 
 function UseContextPage() {
@@ -11,10 +10,13 @@ function UseContextPage() {
     <div className="exercise-container">
       <div className="p-4">
         <h1>useContext Example</h1>
-        <ParentComponent count={count}/>
+        {/* Wrap the components with the Context Provider */}
+        <CountContext.Provider value={count}>
+          <ParentComponent />
+        </CountContext.Provider>
         <button
-            className="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
-            onClick={() => setCount(count + 1)}
+          className="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
+          onClick={() => setCount(count + 1)}
         >
           Increment Count
         </button>
@@ -23,34 +25,26 @@ function UseContextPage() {
   );
 }
 
-function ParentComponent(props) {
-  const count = props.count;
+// Parent component no longer needs props
+function ParentComponent() {
   return (
-      <div>
-        <h2>Parent Component</h2>
-        <ChildComponent count={count}/>
-      </div>
+    <div>
+      <h2>Parent Component</h2>
+      <ChildComponent />
+    </div>
   );
 }
 
-ParentComponent.propTypes = {
-  count: PropTypes.number,
-}
-
-function ChildComponent(props) {
-  // const count = props.count;
+function ChildComponent() {
+  // Use the context to get the count value directly
   const count = useContext(CountContext);
+
   return (
-      <div>
-        <h3>Child Component</h3>
-        <p>User: {count}</p>
-      </div>
+    <div>
+      <h3>Child Component</h3>
+      <p>User: {count}</p>
+    </div>
   );
 }
-
-ChildComponent.propTypes = {
-  count: PropTypes.number,
-}
-
 
 export default UseContextPage;
