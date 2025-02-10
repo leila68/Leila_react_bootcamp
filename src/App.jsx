@@ -12,12 +12,14 @@ import ApiCallPage from "./pages/Exercise_02/ApiCall/index.jsx";
 import UseContextPage from "./pages/Exercise_02/UseContext/index.jsx";
 import Exe3App from "./pages/Exercise_03/Exe3App.jsx";
 
+
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="exercise_01" element={<Exercise_01 />} />
           <Route path="exercise_02" element={<Exercise_02 />} />
+          <Route path="Exe3App" element={<Exe3App />} />
           <Route path="dynamic">
             <Route path="/dynamic/:id/:otherParam" element={<DynamicRoutingPage />} />
           </Route>
@@ -25,7 +27,6 @@ const router = createBrowserRouter(
           <Route path="class-example" element={<ClassExamplePage />} />
           <Route path="api-call" element={<ApiCallPage />} />
           <Route path="use-context" element={<UseContextPage />} />
-          <Route path="exercise-3" element={<Exe3App />} />
         </Route>
     )
 )

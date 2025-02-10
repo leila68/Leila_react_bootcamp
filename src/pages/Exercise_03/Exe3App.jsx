@@ -1,13 +1,13 @@
-import React from 'react';
-import { TeamProvider } from './TeamContext';
-import TeamList from './TeamList';
-import AddTeamMember from './AddTeamMember';
+import React from "react";
+import { TeamProvider } from "./TeamContext";
+import TeamList from "./TeamList";
+import AddTeamMember from "./AddTeamMember";
 
 const Exe3App = () => {
   return (
     <TeamProvider>
-      <div>
-        <h1>Exercise 3 - Team Management</h1>
+      <div className="App">
+        <h1>Team Management App</h1>
         <AddTeamMember />
         <TeamList />
       </div>
